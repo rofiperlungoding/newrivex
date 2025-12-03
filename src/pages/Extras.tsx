@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
-import { Flask, CheckSquare, LockKey, SignIn, UserPlus, GameController } from '@phosphor-icons/react';
+import { Flask, CheckSquare, LockKey, SignIn, UserPlus, GameController, CloudSun } from '@phosphor-icons/react';
 import { useSupabaseAuth } from '../hooks/useSupabaseAuth';
 
 const experiments = [
@@ -14,6 +14,16 @@ const experiments = [
         color: "from-mint/20 to-blue-500/20",
         locked: true,
         link: "/extras/todo"
+    },
+    {
+        id: 2,
+        name: "Global Weather",
+        description: "Real-time weather updates and 5-day forecast for any city in the world. Powered by WeatherAPI.com.",
+        icon: <CloudSun size={32} weight="duotone" className="text-blue-400" />,
+        status: "New",
+        color: "from-blue-400/20 to-purple-500/20",
+        locked: false,
+        link: "/extras/weather"
     }
 ];
 

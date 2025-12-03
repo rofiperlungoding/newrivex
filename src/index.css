@@ -41,4 +41,102 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Leaflet Dark Mode Overrides */
+  .leaflet-popup-content-wrapper,
+  .leaflet-popup-tip {
+    @apply bg-[#1A1A1A] border border-white/10 text-white !important;
+  }
+
+  .leaflet-popup-content {
+    @apply m-4 font-sans text-sm font-medium !important;
+  }
+
+  .leaflet-container {
+    @apply font-sans !important;
+  }
+
+  /* Smart Dark Mode for Maps (Invert + Hue Rotate) */
+  .map-tiles-smart-dark {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+  }
+
+  /* Custom Leaflet Control Styling - Aggressive Overrides */
+  .leaflet-bar,
+  .leaflet-control-layers {
+    border: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .leaflet-bar a,
+  .leaflet-control-layers {
+    background-color: rgba(26, 26, 26, 0.9) !important;
+    backdrop-filter: blur(12px) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Zoom Controls */
+  .leaflet-bar a {
+    border-bottom: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .leaflet-bar a:first-child {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+  }
+
+  .leaflet-bar a:last-child {
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .leaflet-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #6EE7B7 !important;
+    /* Mint */
+  }
+
+  /* Separator for Zoom Buttons */
+  .leaflet-bar a+a {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Layer Control */
+  .leaflet-control-layers {
+    border-radius: 12px !important;
+  }
+
+  .leaflet-control-layers-toggle {
+    filter: invert(1) brightness(2);
+    /* Make the icon white */
+  }
+
+  .leaflet-control-layers-expanded {
+    padding: 1rem !important;
+    background-color: rgba(26, 26, 26, 0.95) !important;
+  }
+
+  .leaflet-control-layers-separator {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  .leaflet-control-layers-base label {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+    cursor: pointer !important;
+  }
+
+  .leaflet-control-layers-base label:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .leaflet-control-layers-base input {
+    margin-right: 0.5rem !important;
+    accent-color: #6EE7B7 !important;
+  }
 }

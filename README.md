@@ -21,6 +21,14 @@ A robust, real-time to-do application integrated directly into the platform.
     - Smart Date & Time Picker.
     - Dashboard Statistics (Active vs Completed).
 - **Optimistic UI**: Instant feedback for user actions.
+25: 
+26: ### 🌦️ Global Weather App (New!)
+27: A comprehensive weather dashboard powered by WeatherAPI.com.
+28: - **Real-time Data**: Current weather, humidity, wind, and UV index.
+29: - **Advanced Metrics**: Air Quality Index (EPA), Sunrise/Sunset times, and Moon phases.
+30: - **Interactive Map**: Professional "Smart Dark" map with satellite options.
+31: - **Smart Search**: Instant city search with autocomplete.
+32: - **Alerts**: Real-time severe weather warnings.
 
 ## 🛠️ Tech Stack
 
@@ -54,6 +62,8 @@ A robust, real-time to-do application integrated directly into the platform.
     ```env
     VITE_SUPABASE_URL=your_supabase_project_url
     VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+    VITE_WEATHER_API_KEY=your_weatherapi_key
+    VITE_WEATHER_BASE_URL=https://api.weatherapi.com/v1
     ```
 
 4.  **Database Setup**

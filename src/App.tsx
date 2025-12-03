@@ -21,6 +21,7 @@ import TermsOfService from './pages/legal/TermsOfService';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import TodoApp from './pages/extras/TodoApp';
+import WeatherApp from './pages/extras/WeatherApp';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="/extras/weather" element={<WeatherApp />} />
             <Route path="/work/:id" element={<ProjectDetail />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/mobile-apps" element={<MobileApps />} />
