@@ -13,6 +13,7 @@ export default {
         secondary: "#86868B",
         accent: "#0071E3", // Apple Blue
         "accent-dark": "#0077ED",
+        mint: "#2DD4BF", // Mint Green
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

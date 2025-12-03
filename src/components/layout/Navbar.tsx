@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { List, X } from '@phosphor-icons/react';
+import { List, X, SignOut, User as UserIcon } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSupabaseAuth } from '../../hooks/useSupabaseAuth';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate(); // Add this
+    const { user, signOut } = useSupabaseAuth();
 
     const navLinks = [
         { name: 'Home', href: '/' },
@@ -13,6 +16,7 @@ const Navbar = () => {
         { name: 'News', href: '/news' },
         { name: 'Projects', href: '/projects' },
         { name: 'Services', href: '/services' },
+        { name: 'Extras', href: '/extras' },
     ];
 
     const isActive = (path: string) => {
@@ -33,8 +37,8 @@ const Navbar = () => {
                             key={link.name}
                             to={link.href}
                             className={`text-sm font-medium transition-colors ${isActive(link.href)
-                                    ? 'text-primary font-semibold'
-                                    : 'text-secondary hover:text-primary'
+                                ? 'text-primary font-semibold'
+                                : 'text-secondary hover:text-primary'
                                 }`}
                         >
                             {link.name}
@@ -42,11 +46,30 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                <Link to="/contact">
-                    <button className="hidden md:block bg-white text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
-                        Let's Talk
-                    </button>
-                </Link>
+                {user ? (
+                    <div className="hidden md:flex items-center gap-3">
+                        <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                            <UserIcon size={16} />
+                            <span className="text-xs text-secondary max-w-[150px] truncate">{user.email}</span>
+                        </div>
+                        <button
+                            onClick={async () => {
+                                await signOut();
+                                navigate('/extras');
+                            }}
+                            className="bg-white/10 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
+                        >
+                            <SignOut size={16} />
+                            Sign Out
+                        </button>
+                    </div>
+                ) : (
+                    <Link to="/contact">
+                        <button className="hidden md:block bg-white text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
+                            Let's Talk
+                        </button>
+                    </Link>
+                )}
 
                 {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center">

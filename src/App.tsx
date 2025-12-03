@@ -9,6 +9,7 @@ import Projects from './pages/Projects';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Work from './pages/Work';
+import Extras from './pages/Extras';
 import ProjectDetail from './pages/ProjectDetail';
 import WebDevelopment from './pages/services/WebDevelopment';
 import MobileApps from './pages/services/MobileApps';
@@ -17,6 +18,10 @@ import Blog from './pages/resources/Blog';
 import Careers from './pages/resources/Careers';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfService from './pages/legal/TermsOfService';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import TodoApp from './pages/extras/TodoApp';
+import ProtectedRoute from './components/auth/ProtectedRoute';
 
 function App() {
   return (
@@ -36,6 +41,15 @@ function App() {
 
             {/* New Routes */}
             <Route path="/work" element={<Work />} />
+            <Route path="/extras" element={<Extras />} />
+            <Route
+              path="/extras/todo"
+              element={
+                <ProtectedRoute>
+                  <TodoApp />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/work/:id" element={<ProjectDetail />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/mobile-apps" element={<MobileApps />} />
@@ -44,6 +58,10 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+
+            {/* Auth Routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
 
