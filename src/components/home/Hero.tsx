@@ -30,19 +30,18 @@ const Hero = () => {
                         className="text-white space-y-6"
                     >
                         <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
-                            Reliable <br />
-                            <span className="text-accent">Digital Solutions</span> <br />
-                            on demand
+                            Hi, I'm <span className="text-accent">Rofi.</span> <br />
+                            Frontend Developer.
                         </h1>
                         <p className="text-lg md:text-xl text-secondary max-w-lg">
-                            Rivex matches brands who need excellence with trusted developers in their community on-demand.
+                            An adaptable engineer dedicated to crafting exceptional digital experiences. I excel in fast-paced environments, constantly seeking innovative challenges and opportunities to master cutting-edge technologies.
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Button variant="mint" size="lg" className="rounded-full text-lg px-8">
-                                View Portfolio
+                                More About Me
                             </Button>
                             <Button variant="outline" size="lg" className="rounded-full text-lg px-8 bg-transparent text-white border-white hover:bg-white/10 hover:text-white">
-                                Contact Us
+                                View Projects
                             </Button>
                         </div>
                     </motion.div>
