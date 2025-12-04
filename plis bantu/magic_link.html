@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in to Rivex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #0A0A0A; font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #ffffff;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+        <!-- Logo -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #ffffff; font-size: 24px; font-weight: bold; margin: 0; letter-spacing: -0.5px;">
+                rivex<span style="color: #6EE7B7;">.</span></h1>
+        </div>
+
+        <!-- Card -->
+        <div
+            style="background-color: #111111; border: 1px solid #222222; border-radius: 24px; padding: 48px 32px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+            <h2 style="font-size: 24px; font-weight: bold; margin: 0 0 16px 0; color: #ffffff;">Sign in to Rivex</h2>
+            <p style="color: #A1A1AA; font-size: 16px; line-height: 26px; margin: 0 0 32px 0;">
+                Click the button below to sign in to your account. This magic link will expire in 24 hours.
+            </p>
+
+            <a href="{{ .ConfirmationURL }}"
+                style="display: inline-block; background-color: #6EE7B7; color: #000000; font-weight: 600; font-size: 16px; padding: 14px 40px; border-radius: 100px; text-decoration: none; transition: all 0.2s;">
+                Sign In
+            </a>
+
+            <p style="color: #52525B; font-size: 13px; margin-top: 40px; line-height: 20px;">
+                If you didn't request this login link, you can safely ignore this email.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 40px; color: #52525B; font-size: 12px;">
+            <p style="margin: 0;">&copy; 2025 Rivex. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>

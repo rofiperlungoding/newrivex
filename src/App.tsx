@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -28,6 +28,13 @@ const Register = lazy(() => import('./pages/auth/Register'));
 const TodoApp = lazy(() => import('./pages/extras/TodoApp'));
 const WeatherApp = lazy(() => import('./pages/extras/WeatherApp'));
 const ProtectedRoute = lazy(() => import('./components/auth/ProtectedRoute'));
+
+// Expense Tracker
+const ExpenseLayout = lazy(() => import('./pages/extras/expense/layout/ExpenseLayout'));
+const ExpenseDashboard = lazy(() => import('./pages/extras/expense/dashboard/ExpenseDashboard'));
+const ExpenseList = lazy(() => import('./pages/extras/expense/expenses/ExpenseList'));
+const ExpenseAnalytics = lazy(() => import('./pages/extras/expense/analytics/ExpenseAnalytics'));
+const ExpenseSettings = lazy(() => import('./pages/extras/expense/settings/ExpenseSettings'));
 
 function App() {
   return (
@@ -62,6 +69,23 @@ function App() {
                 }
               />
               <Route path="/extras/weather" element={<WeatherApp />} />
+
+              {/* Expense Tracker Routes */}
+              <Route
+                path="/extras/expense-tracker"
+                element={
+                  <ProtectedRoute>
+                    <ExpenseLayout />
+                  </ProtectedRoute>
+                }
+              >
+                <Route index element={<Navigate to="dashboard" replace />} />
+                <Route path="dashboard" element={<ExpenseDashboard />} />
+                <Route path="expenses" element={<ExpenseList />} />
+                <Route path="analytics" element={<ExpenseAnalytics />} />
+                <Route path="settings" element={<ExpenseSettings />} />
+              </Route>
+
               <Route path="/work/:id" element={<ProjectDetail />} />
               <Route path="/services/web-development" element={<WebDevelopment />} />
               <Route path="/services/mobile-apps" element={<MobileApps />} />

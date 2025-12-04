@@ -1,37 +1,8 @@
-import { Button } from '../ui/Button';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const location = useLocation();
-    const showBanner = location.pathname !== '/news';
-
     return (
         <footer className="bg-background pt-20 pb-10">
-            {/* Banner Section */}
-            {showBanner && (
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-                    <div className="bg-surface border border-white/10 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
-                        <div className="relative z-10">
-                            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-                                The bright side <br /> of web development
-                            </h2>
-                            <p className="text-lg text-secondary max-w-2xl mx-auto mb-8">
-                                Get reliable development and design from trusted experts in your community.
-                            </p>
-                            <Link to="/contact">
-                                <Button variant="mint" size="lg" className="rounded-full px-10 text-lg font-semibold">
-                                    Get Started
-                                </Button>
-                            </Link>
-                        </div>
-
-                        {/* Decorative blobs */}
-                        <div className="absolute top-0 left-0 w-64 h-64 bg-accent/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-                    </div>
-                </div>
-            )}
-
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10 pt-10">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-10">
                     <div className="col-span-2 lg:col-span-1">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
-import { Flask, CheckSquare, LockKey, SignIn, UserPlus, GameController, CloudSun } from '@phosphor-icons/react';
+import { Flask, CheckSquare, LockKey, SignIn, UserPlus, GameController, CloudSun, Receipt } from '@phosphor-icons/react';
 import { useSupabaseAuth } from '../hooks/useSupabaseAuth';
 
 const experiments = [
@@ -24,6 +24,16 @@ const experiments = [
         color: "from-blue-400/20 to-purple-500/20",
         locked: false,
         link: "/extras/weather"
+    },
+    {
+        id: 3,
+        name: "Expense Tracker",
+        description: "Enterprise-grade expense management with budget tracking, analytics, and detailed reporting.",
+        icon: <Receipt size={32} weight="duotone" className="text-orange-400" />,
+        status: "Enterprise",
+        color: "from-orange-400/20 to-red-500/20",
+        locked: false,
+        link: "/extras/expense-tracker"
     }
 ];
 

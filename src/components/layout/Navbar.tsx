@@ -3,12 +3,14 @@ import { List, X, SignOut, User as UserIcon } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSupabaseAuth } from '../../hooks/useSupabaseAuth';
+import { useExpenseStore } from '../../pages/extras/expense/store/expenseStore';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate(); // Add this
     const { user, signOut } = useSupabaseAuth();
+    const resetExpenseStore = useExpenseStore(state => state.reset);
 
     const navLinks = [
         { name: 'Home', href: '/' },
@@ -55,6 +57,7 @@ const Navbar = () => {
                         <button
                             onClick={async () => {
                                 await signOut();
+                                resetExpenseStore();
                                 navigate('/extras');
                             }}
                             className="bg-white/10 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-white/20 transition-colors flex items-center gap-2"
