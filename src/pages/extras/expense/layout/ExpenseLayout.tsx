@@ -18,7 +18,7 @@ import { motion } from 'framer-motion';
 import { useSupabaseAuth } from '../../../../hooks/useSupabaseAuth';
 
 export default function ExpenseLayout() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen] = useState(true);
     const location = useLocation();
     const navigate = useNavigate();
     const { user, signOut } = useSupabaseAuth();
