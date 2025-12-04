@@ -32,7 +32,7 @@ const experiments = [
         icon: <Receipt size={32} weight="duotone" className="text-orange-400" />,
         status: "Enterprise",
         color: "from-orange-400/20 to-red-500/20",
-        locked: false,
+        locked: true,
         link: "/extras/expense-tracker"
     }
 ];
