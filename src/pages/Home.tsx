@@ -19,11 +19,11 @@ const Home = () => {
                             <UserCircle size={32} weight="fill" />
                         </div>
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-                            Hi, I'm <span className="text-gray-400">Rivex</span>. <br />
+                            Hi, I'm <span className="text-gray-400">Rofi</span>. <br />
                             Frontend Developer.
                         </h1>
                         <p className="text-secondary text-lg max-w-md">
-                            I build pixel-perfect websites and explore the latest in web technology. Welcome to my digital garden.
+                            An adaptable engineer dedicated to crafting exceptional digital experiences. I excel in fast-paced environments, constantly seeking innovative challenges and opportunities to master cutting-edge technologies.
                         </p>
                     </div>
                     <div className="flex gap-4 mt-8">
